@@ -13,7 +13,7 @@ const rl = readline.createInterface ({
 
 // VALIDAÇÂO DE ENTRADA DE DADOS //
 function validarNome(nome) {
-    return nome && nome.trim().length >= 2;
+     return nome && nome.trim().length >= 2;
 }
 
 function validarIdade(idade) {
@@ -152,31 +152,37 @@ function iniciarSistema() {
 // FUNÇÔES PARA O MENU //
 
 function cadastrarViaMenu() {
+    // Pergunta Nome //
     rl.question('Nome: ', (nome) => {
         if (!validarNome(nome)) {
             console.log('Nome Inválido!');
-            return iniciarSistema();
+            return cadastrarViaMenu(); // volta a perguntar tudo de novo //
         }
 
+        // Pergunta Idade //
         rl.question('Idade: ', (idade) => {
             if (!validarIdade(idade)) {
                 console.log('Idade Inválida!');
-                return iniciarSistema();
+                return cadastrarViaMenu(); // volta a perguntar tudo de novo
             }
 
+            // Pergunta Notas
             rl.question('Notas (separadas por vírgula): ', (notasInput) => {
                 const notas = notasInput.split(',').map(n => n.trim());
                 if (!validarNotas(notas)) {
-                    console.log('Notas Imválidas!');
-                    return iniciarSistema();
+                    console.log('Notas Inválidas!');
+                    return cadastrarViaMenu(); // volta a perguntar tudo de novo
                 }
 
+                // Cadastro final
                 cadastrarEstudantes(nome, idade, notas);
+                console.log('Estudante cadastrado com sucesso!');
                 iniciarSistema();
             });
-        });
-    });
-};
+        });
+    });
+}
+
 
 function buscarViaMenu() {
     rl.question('Digite o nome:', (nome) => {
