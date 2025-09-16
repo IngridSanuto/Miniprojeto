@@ -143,9 +143,8 @@ function iniciarSistema() {
             case '5': mostrarMelhorEstudante(); break;
             case '6': gerarRelatorios(); break;
             case '7': console.log('Volte Sempre!'); rl.close(); return;
-            default: console.log('Opção inválida!');
+            default: console.log('Opção inválida!'); iniciarSistema()
         }
-        setTimeout(iniciarSistema, 2000);
     })
 }
 
