@@ -51,19 +51,9 @@ function cadastrarEstudantes(nome, idade, notas) {
 
 function listarEstudantes() {
     console.log('lista de estudantes');
-    console.log('='.repeat(50))
-
-    if (estudantes.length === 0) {
-        console.log('nenhum estudante cadastrado.');
-        return;
-    }
-
-    estudantes.forEach((estudante, index) => {
-        console.log(`${index + 1}. ${estudante.nome} (${estudante.idade} anos)`);
-        console.log(`  Notas: ${estudante.notas.join(', ')}`);
-        console.log(`  Média: ${estudante.media}`);
-        console.log('-'.repeat(30));
-    });
+console.log('='.repeat(50))
+    console.table(estudantes)
+    iniciarSistema();
 }
 
 // BUSCAR ESTUDANTES POR NOME //
@@ -94,12 +84,14 @@ function calcularMediaGeral () {
     const total = estudantes.reduce((soma, estudantes) => soma + estudantes.media, 0);
     const media = total / estudantes.length;
     console.log(`Média Geral da turma: ${media.toFixed(2)}`);
+    iniciarSistema()
 }
 
 function mostrarMelhorEstudante() {
     if (estudantes.length === 0) return;
     const melhor = estudantes.reduce((maior, atual) => atual.media > maior.media ? atual : maior);
     console.log(`Melhor Estudante: ${melhor.nome} - Média: ${melhor.media}`);
+    iniciarSistema()
 }
 
 // RELATORIOS DE SITUAÇAO //
@@ -117,6 +109,7 @@ function gerarRelatorios() {
     
     console.log('REPROVADOS:');
     reprovados.forEach(e => console.log(`  ${e.nome} - ${e.media}`));
+    iniciarSistema()
 }
 
 // MENU INTERATIVO //
@@ -143,7 +136,8 @@ function iniciarSistema() {
             case '5': mostrarMelhorEstudante(); break;
             case '6': gerarRelatorios(); break;
             case '7': console.log('Volte Sempre!'); rl.close(); return;
-            default: console.log('Opção inválida!'); iniciarSistema()
+            default: console.log('Opção inválida!'); 
+            iniciarSistema()
         }
     })
 }
@@ -175,8 +169,7 @@ function cadastrarViaMenu() {
 
                 // Cadastro final
                 cadastrarEstudantes(nome, idade, notas);
-                console.log('Estudante cadastrado com sucesso!');
-                iniciarSistema();
+                 iniciarSistema();
             });
         });
     });
