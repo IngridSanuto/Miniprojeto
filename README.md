@@ -52,7 +52,7 @@ cd Miniprojeto
 3. Execute o projeto no terminal:
 node index.js
 
-## SISTEMA DE ESTUDANTES
+## MENU DO SISTEMA
 1. Cadastrar estudantes
 2. Listar estudantes
 3. Buscar por nome
@@ -63,16 +63,17 @@ node index.js
    
 ## 🧠 Regras e Validações
 
-Nome: mínimo de 2 caracteres
-Idade: entre 10 e 100 anos
-Notas: valores entre 0 e 10, separadas por vírgula
+● Nome: mínimo de 2 caracteres
+● Idade: entre 10 e 100 ano
+● Notas: valores entre 0 e 10, separadas por vírgula
+
 A média do estudante é calculada automaticamente e arredondada para duas casas decimais
 
 ## 📊 Relatórios de Situação
 
-Aprovados: média ≥ 7
-Recuperação: média entre 5 e 6.9
-Reprovados: média < 5
+● Aprovados: média ≥ 7
+● Recuperação: média entre 5 e 6.9
+● Reprovados: média < 5
   
 # Autora
-Ingrid Sanuto
+Desenvolvido por: Ingrid Sanuto
