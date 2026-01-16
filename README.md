@@ -61,25 +61,19 @@ node index.js
 6. Gerar relatórios
 7. Sair
 
----
-
 ## 🧠 Regras e Validações
 
--Nome: mínimo de 2 caracteres
--Idade: entre 10 e 100 ano
--Notas: valores entre 0 e 10, separadas por vírgula
+- Nome: mínimo de 2 caracteres
+- Idade: entre 10 e 100 ano
+- Notas: valores entre 0 e 10, separadas por vírgula
 
 A média do estudante é calculada automaticamente e arredondada para duas casas decimais
 
----
-
 ## 📊 Relatórios de Situação
 
--Aprovados: média ≥ 7
--Recuperação: média entre 5 e 6.9
--Reprovados: média < 5
-
----
+- Aprovados: média ≥ 7
+- Recuperação: média entre 5 e 6.9
+- Reprovados: média < 5
 
 # Autora
 Desenvolvido por: Ingrid Sanuto
